@@ -1,2 +1,0 @@
-# dumbledoresarmy
-NBCU Movies bot
