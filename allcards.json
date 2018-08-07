@@ -1,0 +1,748 @@
+// Fast and Furious toys
+"messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Nitro Street Racer",
+          "subtitle": "$32.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Nitro-Street-Racer-1317590.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Nitro-Street-Racer.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Axle Muscle Car Racer",
+          "subtitle": "$32.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Axle-Muscle-Car-Racer-1317591.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Axle-Muscle-Car-Racer.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Playing Cards",
+          "subtitle": "$14.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Playing-Cards-1317588.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Playing-Cards.html"
+            }
+          ],
+          "lang": "en"
+        },
+
+// Fast and Furious hats
+"messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Family Forever Adult Cap",
+          "subtitle": "$23.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Family-Forever-Adult-Cap-1320515.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Family-Forever-Adult-Cap.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Black Adult Cap",
+          "subtitle": "$24.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Black-Adult-Cap-1317512.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Black-Adult-Cap.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Born for Speed Adult Cap",
+          "subtitle": "$23.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Born-for-Speed-Adult-Cap-1317515.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Born-for-Speed-Adult-Cap.html"
+            }
+          ],
+          "lang": "en"
+        }
+
+// Fast and Furious mugs
+"messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Diamond Plated Mug",
+          "subtitle": "$16.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Diamond-Plated-Mug-1317765.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Diamond-Plated-Mug.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Mug",
+          "subtitle": "$16.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Mug-1317764.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Mug.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Ride or Die Travel Tumbler",
+          "subtitle": "$16.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Ride-or-Die-Travel-Tumbler-1320312.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Ride-or-Die-Travel-Tumbler.html"
+            }
+          ],
+          "lang": "en"
+        },
+
+// Fast and Furious T-shirts
+"messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Muscle Garage Adult T-Shirt",
+          "subtitle": "$34.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Muscle-Garage-Adult-T-Shirt-FNFMN-MSCLE-GRG.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Muscle-Garage-Adult-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Family Forever Ladies T-Shirt",
+          "subtitle": "$34.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Family-Forever-Ladies-T-Shirt-FNF-FMLY4VR-DOL.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Family-Forever-Ladies-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ Ride or Die Men's T-Shirt",
+          "subtitle": "$27.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-Ride-or-Die-Mens-T-Shirt-FNFMNS-SHIELD-T.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-Ride-or-Die-Mens-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Fast & Furious™ You Ride You Fight Youth T-Shirt",
+          "subtitle": "$27.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Fast-and-Furious-You-Ride-You-Fight-Youth-T-Shirt-Y-FNF-RIDE-FGHT.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Fast-and-Furious-You-Ride-You-Fight-Youth-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+
+ // Jurassic World Accessories
+ "messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Sculpted Logo Keychain",
+          "subtitle": "$6.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Sculpted-Logo-Keychain-1324296.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Sculpted-Logo-Keychain.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Journal with Pen",
+          "subtitle": "$14.00",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Journal-With-Pen-1325772.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Journal-With-Pen.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Radar Spinning Keychain",
+          "subtitle": "$9.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Radar-Spinning-Keychain-1324292.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Radar-Spinning-Keychain.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Journal",
+          "subtitle": "$15.00",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Journal-1325780.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Journal.html"
+            }
+          ],
+          "lang": "en"
+        },
+// Jurassic World Mugs
+"messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Mug",
+          "subtitle": "$14.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Mug-1287357.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Mug.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Stone Logo Mug",
+          "subtitle": "$16.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Stone-Logo-Mug-1323550.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Stone-Logo-Mug.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Travel Bottle",
+          "subtitle": "$16.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Travel-Bottle-1289970.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Travel-Bottle.html"
+            }
+          ],
+          "lang": "en"
+        },
+
+// Jurassic World Hats
+"messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Flame Logo Cap",
+          "subtitle": "$23.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Flame-Logo-Adult-Cap-1324124.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/images/P-Jurassic-World-Flame-Logo-Adult-Cap-1324124.JPG"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Safari Hat",
+          "subtitle": "$28.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Safari-Hat-1289532.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Safari-Hat.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 2,
+          "platform": "facebook",
+          "title": "Would you like to search for more NBCU gear?",
+          "replies": [
+            "yes",
+            "no"
+          ],
+          "lang": "en"
+        },
+
+// Jurassic World Tshirts
+"messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Ladies T-Shirt",
+          "subtitle": "$30.00",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Logo-Ladies-T-Shirt-JW-LDS-LOGO-TEE.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Logo-Ladies-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Logo T-Shirt",
+          "subtitle": "$24.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Mens-Logo-T-Shirt-JW-MNS-LOGO-TEE.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Mens-Logo-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Flame Logo Men's T-Shirt",
+          "subtitle": "$27.00",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Flame-Logo-Mens-T-Shirt-JW2-FLAME-MNS-T.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Flame-Logo-Mens-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Jurassic World Logo Youth T-Shirt",
+          "subtitle": "$19.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-Jurassic-World-Logo-Youth-T-Shirt-YTH-JPW-LOGO-T.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/Jurassic-World-Logo-Youth-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+
+// Secret Life of Pets Tshirts
+"messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Who's Your Doggy Adult T-Shirt",
+          "subtitle": "$25.00",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Whos-Your-Doggy-Adult-T-Shirt-AD-WHOS-UR-DGY.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Whos-Your-Doggy-Adult-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Wiener Takes All Adult T-Shirt",
+          "subtitle": "$28.00",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Wiener-Takes-All-Adult-T-Shirt-WIENR-TKS-ALL-T.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Wiener-Takes-All-Adult-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Who's Your Doggy Youth T-Shirt",
+          "subtitle": "$22.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Whos-Your-Doggy-Youth-T-Shirt-Y-WHOS-UR-DOGGY.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Whos-Your-Doggy-Youth-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Fluffy and Fearless Ladies T-Shirt",
+          "subtitle": "$29.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Fluffy-and-Fearless-Ladies-T-Shirt-FLFFY-FLRSS-RGL.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Fluffy-and-Fearless-Ladies-T-Shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+
+ // Secret Life of Pets Accessories
+ "messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Miniature Pin Set",
+          "subtitle": "$14.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Miniature-Pin-Set-1299515.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Miniature-Pin-Set.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Journal With Pen",
+          "subtitle": "$12.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Journal-With-Pen-1302922.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Journal-With-Pen.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Max and Duke Bone Pin",
+          "subtitle": "$12.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Max-and-Duke-Bone-Pin-1299194.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Max-and-Duke-Bone-Pin.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Jumbo Pen",
+          "subtitle": "$5.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Jumbo-Pen-1301787.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Jumbo-Pen.html"
+            }
+          ],
+          "lang": "en"
+        },
+
+// Secret Life of pets Mugs
+    "messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Etched Mug",
+          "subtitle": "$14.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Etched-Mug-1300071.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Etched-Mug.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Who's Your Doggy Tervis® Tumbler",
+          "subtitle": "$21.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Whos-Your-Doggy-Tervis-Tumbler-1301574.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Whos-Your-Doggy-Tervis-Tumbler.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Who's your Doggy Travel Tumbler",
+          "subtitle": "$18.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Whos-your-Doggy-Travel-Tumbler-1301603.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Whos-your-Doggy-Travel-Tumbler.html"
+            }
+          ],
+          "lang": "en"
+        },
+
+
+// Secret Life of Pets Toys
+"messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Gidget Plush",
+          "subtitle": "$24.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Gidget-Plush-1297704.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Gidget-Plush.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Figurines Set",
+          "subtitle": "$24.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Figurines-Set-1298183.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Figurines-Set.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Duke Plush",
+          "subtitle": "$34.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Duke-Plush-1297705.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Duke-Plush.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Secret Life of Pets Max Plush",
+          "subtitle": "$24.95",
+          "imageUrl": "https://shop.universalorlando.com/images/P-The-Secret-Life-of-Pets-Max-Plush-1297702.JPG",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://shop.universalorlando.com/p/The-Secret-Life-of-Pets-Max-Plush.html"
+            }
+          ],
+          "lang": "en"
+        },
+
+  // The Good Place Mugs
+  "messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Good Place WTFORK White Mug",
+          "subtitle": "$16.95",
+          "imageUrl": "https://www.nbcstore.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/o/goodplace_wtfork_white_15oz_mug_mockup_handle-on-right_15oz.jpg",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://www.nbcstore.com/shop-by-show/the-good-place/the-good-place-wtfork-white-mug.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Good Place That's Bullshirt White Mug",
+          "subtitle": "$16.95",
+          "imageUrl": "https://www.nbcstore.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/o/goodplace_bullshirt_white_15oz_mug_mockup_handle-on-right_15oz.jpg",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://www.nbcstore.com/shop-by-show/the-good-place/the-good-place-that-s-bullshirt-white-mug.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Good Place Royally Forked Up Mug",
+          "subtitle": "$16.95",
+          "imageUrl": "https://www.nbcstore.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/o/goodplace_royallyforkedup_white_15oz_mug_mockup_handle-on-right_15oz.jpg",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://www.nbcstore.com/shop-by-show/the-good-place/the-good-place-somebody-royally-forked-up-white-mug.html"
+            }
+          ],
+          "lang": "en"
+        },
+        
+  
+  // The Good Place Tshirts
+  "messages": [
+        {
+          "type": 4,
+          "platform": "facebook",
+          "payload": {
+            "facebook": {
+              "attachment": {
+                "type": "",
+                "payload": {}
+              }
+            }
+          },
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Good Place WTFORK Women's T-shirt",
+          "subtitle": "$32.95",
+          "imageUrl": "https://www.nbcstore.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/o/good_place-wtfork-womens_vneck-royalshirt.jpg",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://www.nbcstore.com/shop-by-show/the-good-place/the-good-place-wtfork-women-s-relaxed-v-neck-t-shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Good Place What A Bench Men's T-shirt",
+          "subtitle": "$27.95",
+          "imageUrl": "https://www.nbcstore.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/o/goodplace_what-a-bench_mens_triblend_royal_tshirt_mockup.jpg",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://www.nbcstore.com/shop-by-show/the-good-place/the-good-place-what-a-bench-men-s-tri-blend-short-sleeve-t-shirt.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Good Place That's Bullshirt Unisex Tank Top",
+          "subtitle": "$28.95",
+          "imageUrl": "https://www.nbcstore.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/o/goodplace_thatsbullshirt_unisex_tanktop_red_mockup.jpg",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://www.nbcstore.com/shop-by-show/the-good-place/the-good-place-that-s-bullshirt-unisex-tank-top.html"
+            }
+          ],
+          "lang": "en"
+        },
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "The Good Place What A Bench Unisex Tank Top",
+          "subtitle": "$28.95",
+          "imageUrl": "https://www.nbcstore.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/o/goodplace_whatabench_unisex_tanktop_white_mockup.jpg",
+          "buttons": [
+            {
+              "text": "View",
+              "postback": "https://www.nbcstore.com/shop-by-show/the-good-place/the-good-place-what-a-bench-unisex-tank-top.html"
+            }
+          ],
+          "lang": "en"
+        },      
+
+
+
+
+
+
+
+
+
+
+

@@ -23,7 +23,7 @@ let jwmugs = require("./merch/jwmugs")
 
 let project_id = 'reviewsbot-7c342'
 
-var cinemas_list = new Object(require('./example_scripts/cinemas_from_search'))
+var cinemas_list = require('./example_scripts/cinemas_from_search')
 
 
 //###################################################
@@ -52,7 +52,7 @@ express()
             {
               "platform": "facebook",
               "replies": [
-                "Jurassic World 2",
+                "Jurassic World",
                 "The 100",
                 "Mr. Robot"
               ],
@@ -100,7 +100,7 @@ express()
 
       if (merch_type === 't-shirts'){
 
-        if (movie === 'Jurassic World Fallen Kingdom'){
+        if (movie === 'Jurassic World'){
 
           res.send(
             {
@@ -121,7 +121,7 @@ express()
         }
       }
       else if (merch_type === 'hats'){
-        if (movie === 'Jurassic World Fallen Kingdom'){
+        if (movie === 'Jurassic World'){
 
           res.send(
             {
@@ -142,7 +142,7 @@ express()
         }
       }
       else if (merch_type === 'mugs'){
-        if (movie === 'Jurassic World Fallen Kingdom'){
+        if (movie === 'Jurassic World'){
 
           res.send(
             {
@@ -163,7 +163,7 @@ express()
         }
       }
       else if (merch_type === 'accessories'){
-        if (movie === 'Jurassic World Fallen Kingdom'){
+        if (movie === 'Jurassic World'){
 
           res.send(
             {
@@ -246,7 +246,6 @@ express()
     }
     else if(intent === 'Movie-Tickets-Location'){
 
-      var movie = req.body.result.parameters.movie
       var lat = req.body.originalRequest.data.postback.data.lat
       var lng = req.body.originalRequest.data.postback.data.long
       
@@ -320,31 +319,22 @@ express()
         var cinema_names_showtime_details = []
 
         for(k = 0; k < cinemas_and_showtimes.length; k++){
-          try{
-            var cid = cinemas_and_showtimes[k][0]
-            // console.log(cid)
-            // console.log(util.inspect(cinemas_list.cinemas[cid], false, null))
-            // Object.prototype.toString.call(cinemas_list.cinemas[cid])
-            // console.log(cinemas_list.cinemas[cid].keys)
-            
-            var ctel = cinemas_list.cinemas[cid].telephone
-            var cweb = cinemas_list.cinemas[cid].website
-            var cadd = cinemas_list.cinemas[cid].location.address.display_text
-            var cname = cinemas_list.cinemas[cid].name
-            var start_times = []
 
-            for(l = 1; l < cinemas_and_showtimes[k][1].length; l++){
-              start_times.push(cinemas_and_showtimes[k][1][l].start_at)
-            }
-            //cinemas_and_showtimes[k][1].start_at
+          var cid = cinemas_and_showtimes[k][0]
+          var cname = cinemas_list.cinemas[cid].name
+          var ctel = cinemas_list.cinemas[cid].telephone
+          var cweb = cinemas_list.cinemas[cid].website
+          var cadd = cinemas_list.cinemas[cid].location.address.display_text
+          var start_times = []
 
-            cinema_names_showtime_details.push(
-              [cname, start_times, [cname,ctel,cweb,cadd]]
-            )
+          for(l = 1; l < cinemas_and_showtimes[k][1].length; l++){
+            start_times.push(cinemas_and_showtimes[k][1][l].start_at)
           }
-          catch(error){
-            continue
-          }
+          //cinemas_and_showtimes[k][1].start_at
+
+          cinema_names_showtime_details.push(
+            [cname, start_times, [cname,ctel,cweb,cadd]]
+          )
         }
 
         //console.log(cinema_names_showtime_details)
@@ -359,14 +349,11 @@ express()
 
           var raw_showtimes = cinema_names_showtime_details[m][1]
 
-          var times = []
-          var days = []
-
           for(n = 0; n < raw_showtimes.length; n++){
             //2018-08-04T19:10:00-07:00  <----  [:10] = 2018-08-04
 
-            // var times = []
-            // var days = []
+            var times = []
+            var days = []
 
             var datestring = raw_showtimes[n].substring(0,10)
 
@@ -375,136 +362,76 @@ express()
             // console.log(days)
             // console.log("end")
 
-            //var holymolytest = days.indexOf('hey')
+            var holymolytest = days.indexOf('hey')
 
             // console.log("days index: " + holymolytest)//datestring))//////////////////////////////////////////////////////////////////////////////////
             // console.log("days: " + days)
             // console.log("date substring: " + datestring)
 
-            var days_index = -1
-            for(z = 0; z < days.length; z++){
+            if(days.indexOf(datestring) === -1){
 
-              console.log("datestring: " + datestring)
-              console.log("days[z].substring(0,10): " + days[z].substring(0,10))
-              if(datestring === days[z].substring(0,10)){
-                days_index = z
-                break
-              }
-            }
-
-            if(days_index === -1){
-
-              days.push(datestring)
+              days.push(raw_showtimes[n].substring(0,10))
               //console.log(raw_showtimes[n].substring(0,10))
 
               var time = new Date(raw_showtimes[n])
               var time_day = week[time.getDay()] + " " + (time.getMonth()+1) + "/" + time.getDate()
-              var minutes = time.getMinutes()
-              var minutes_string = ''
-              if(minutes < 10){
-                minutes_string = "0" + minutes
-              }
-              else{minutes_string = minutes.toString()}
-              var time_hourmin = (time.getHours()) + ":" + minutes_string
-              times.push([time_day,time_hourmin])
+              var time_hourmin = (time.getHours()+1) + ":" + (time.getMinutes()+1)
+
+              times.push(time_day)
+              times.push(time_hourmin)
             }
             else{
 
               console.log('was found')
 
-              var time_index = days_index
+              var time_index = days.indexOf(raw_showtimes[n].substring(0,10))
               var time = new Date(raw_showtimes[n])
-              var minutes_string = ''
-              var minutes = time.getMinutes()
-              if(minutes < 10){
-                minutes_string = "0" + minutes
-              }
-              else{minutes_string = minutes.toString()}
-              var time_hourmin = (time.getHours()) + ":" + minutes_string
-              times[days_index].push(time_hourmin)
+              var time_hourmin = (time.getHours()+1) + ":" + (time.getMinutes()+1)
+              times.push(time_hourmin)
 
             }
 
-            //page_days_times = page_days_times.concat(times)
+            page_days_times.push(times)
             //console.log(page_days_times)
-            //console.log(times)
 
           }
 
           var date_times_url_queries = ''
 
-          for(o = 0; o < times.length; o++){
+          for(o = 0; o < page_days_times.length; o++){
 
-            date_times_url_queries += "&time_" + o + "=" + times[o].toString()
+            date_times_url_queries += "&time_" + o + "=" + page_days_times[o].toString()
 
           }
 
           var cinema_messages = [
             {
-              "type":4,
-              "platform":"facebook",
-              "payload":{
-                // start payload
-                "facebook":{
-                  "attachment": {
-                    "type": "template",
-                    "payload": {
-                      "template_type":"generic",
-                      "sharable": true,
-                      "elements":[
-                        {
-                          "title": cinema_names_showtime_details[m][2][0], //cinema name
-                          "image_url": "https://image.ibb.co/fskHeS/blue.png",
-                          "subtitle": cinema_names_showtime_details[m][2][3], //cinema address
-                          "buttons":[
-                            {
-                              "type":"web_url",
-                              "url": cinema_names_showtime_details[m][2][2], //cinema homepage
-                              "title":"Web page"
-                            },
-                            {
-                              "type":"phone_number",
-                              "title":"Call",
-                              "payload": cinema_names_showtime_details[m][2][1] //phone number
-                            },
-                            {
-                              "type":"web_url",
-                              "url": "https://jurassic-world-mediatech-bot.herokuapp.com/showtimes?cinema_name=" + cinema_names_showtime_details[m][0] + date_times_url_queries, //cinema homepage
-                              "title":"Showtimes"
-                            }
-                          ]// end buttons
-                        }//,
-                        // {
-                        //   "title" : "testing",
-                        //   "subtitle" : "testing123456testing123456testing123456testing123456testing123456testing123456testing123456testing123456"
-                        // }
-                      ]//end elements
-                    }
-                  }
+              "title": cinema_names_showtime_details[m][2][0], //cinema name
+              "image_url": "https://image.ibb.co/fskHeS/blue.png",
+              "subtitle": cinema_names_showtime_details[m][2][3], //cinema address
+              "buttons":[
+                {
+                  "type":"web_url",
+                  "url": cinema_names_showtime_details[m][2][2], //cinema homepage
+                  "title":"Web page"
+                },
+                {
+                  "type":"phone_number",
+                  "title":"Call",
+                  "payload": cinema_names_showtime_details[m][2][1] //phone number
+                },
+                {
+                  "type":"web_url",
+                  "url": "https://jurassic-world-mediatech-bot.herokuapp.com/showtimes?cinema_name=" + cinema_names_showtime_details[m][0] + date_times_url_queries, //cinema homepage
+                  "title":"Showtimes"
                 }
-                //end fb payload
-              }
-            }//,
-              // {
-              //   "type": 0,
-              //   "platform": "facebook",
-              //   "speech": cinema_names_showtime_details[m][1]
-              // }
-          ]//end array
+              ]// end buttons
+            }
+          ]
 
           response_messages = response_messages.concat(cinema_messages)
 
         }
-
-        response_messages = response_messages.concat([{
-            "platform": "facebook",
-            "replies": [
-              "Yes",
-              "No"
-            ],
-            "title": "Would you like to know more about " + movie + "?",
-            "type": 2
-        }])
 
         //console.log(date_times_url_queries)
 
@@ -512,9 +439,26 @@ express()
 
         //console.log(response_messages[0])
         console.log('almost there')
+
+        console.log(response_messages[0])
+
         res.send({
-          "speech": "Movie times",
-          "messages" : response_messages
+          "type":4,
+          "platform":"facebook",
+          "payload":{
+            // start payload
+            "facebook":{
+              "attachment": {
+                "type": "template",
+                "payload": {
+                  "template_type":"generic",
+                  "sharable": true,
+                  "elements": response_messages
+                }
+              }
+            }
+            //end fb payload
+          }
         })
         
       })
