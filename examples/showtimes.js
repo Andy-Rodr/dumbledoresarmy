@@ -24,7 +24,7 @@ request(options, function (error, response, body) {
   var properties = {
   	"location": lat.toString() + "," + lng.toString(),
   	"distance": "10",
-  	"movie_id": "45714"
+  	"movie_id": "45714" // Mission Impossible movie ID
   }
   var headers_obj = {
   	"X-Api-Key": "fvz6gU0nOgf19S32D1pJg1wVuTR26u90"

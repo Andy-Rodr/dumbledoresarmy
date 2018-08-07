@@ -7,3 +7,8 @@ Status as of 07-21-2018 03:02 AM in the morning....
 Finally freaking works. Just need to process the events my webhook url recieves. Excited for this!!!
 
 Will be removing all unecessary files soon after, and will put up examples of my requests + write up a short tutorial on how this works.
+
+
+08-07-2018
+=====================
+Organizing this to be a bit less confusing. Some changes were made to the js files because they required files that were moved around and some folders were renamed.

@@ -1,9 +1,9 @@
 // Things to add:
 // Option to view Fandango's 'Weekend Ticket' videos
-// 
 
 
-//converting to api v1
+// This version requires Dialogflow API v1, you can flip the switch in
+// the options for your agent.
 
 console.log('Bot is starting')
 
@@ -16,14 +16,14 @@ let bodyParser = require("body-parser")
 
 let PORT = process.env.PORT || 5000
 
-let jwshirts = require("./merch/jwshirts")
-let jwhats = require("./merch/jwhats")
-let jwacces = require("./merch/jwacces")
-let jwmugs = require("./merch/jwmugs")
+let jwshirts = require("./Sarah_merch/jwshirts")
+let jwhats = require("./Sarah_merch/jwhats")
+let jwacces = require("./Sarah_merch/jwacces")
+let jwmugs = require("./Sarah_merch/jwmugs")
 
 let project_id = 'reviewsbot-7c342'
 
-var cinemas_list = new Object(require('./example_scripts/cinemas_from_search'))
+var cinemas_list = new Object(require('./cinemas_from_search'))
 
 
 //###################################################
@@ -35,8 +35,7 @@ express()
     res.send("index page")
   })
   .post("/webhooks/twitter", (req, res) => {
-    //console.log(req.body)
-    //var session_id = req.body.sessionId
+    
     var intent = req.body.result.metadata.intentName
 
     if(intent === "Default Welcome Intent"){
@@ -58,36 +57,7 @@ express()
               ],
               "title": "You can pick from any of these or enter the name of the movie or TV show you would like to view",
               "type": 2
-            }//,
-            // {
-            //   "type":4,
-            //   "platform":"facebook",
-            //   "payload":{
-            //     // start payload
-            //     "facebook":{
-            //       "attachment": {
-            //         "type": "template",
-            //         "payload": {
-            //           "template_type":"button",
-            //           "text":"Yes or no example",
-            //           "buttons":[
-            //             {
-            //               "type":"web_url",
-            //               "url":"https://www.google.com",
-            //               "title":"web_url example"
-            //             },
-            //             {
-            //               "type":"postback",
-            //               "title":"this is a postback example",
-            //               "payload":"200 ok"
-            //             }
-            //           ]
-            //         }
-            //       }
-            //     }
-                // end fb payload
-            //   }
-            // }
+            }
           ]
         }
       )
@@ -250,15 +220,17 @@ express()
       var lat = req.body.originalRequest.data.postback.data.lat
       var lng = req.body.originalRequest.data.postback.data.long
       
-      lat = lat.toFixed(2)
-      lng = lng.toFixed(2)
+      lat = lat.toFixed(2) // Internationshowtimes API needs the lat and long
+      lng = lng.toFixed(2) // to be rounded to 2 digits after the decimal.
 
-      //// Making a get request to ishowtimes
+      //// Making a get request to ishowtimes for showtimes within a range of the given lat/long
 
       var properties = {
         "location": lat.toString() + "," + lng.toString(),
-        "distance": "10",
-        "movie_id": "45714"
+        "distance": "10", // Can be changed. This specifies distance to search from location (in kilometers).
+        "movie_id": "45714" // Hardcoded to the Mission Impossible movie ID. Another call to ishowtimes api
+                            // would be needed to get the movie ID of the actual movie parameter passed from
+                            // Dialogflow.
       }
       var headers_obj = {
         "X-Api-Key": "fvz6gU0nOgf19S32D1pJg1wVuTR26u90"
@@ -277,22 +249,18 @@ express()
         var cinemas = []
 
         var parsed = JSON.parse(body)
-
-        //console.log(parsed)
         
         var showtimes = parsed.showtimes //array of showtimes
-        //console.log(showtimes[0])
 
-        var cinemas_and_showtimes = []
+        var cinemas_and_showtimes = [] // Custom array that will transform the showtimes objects into more useful data
 
         for(i = 0; i < showtimes.length; i++){ //iterate through showtimes
 
           var cinemaid = showtimes[i].cinema_id  // getting cinema_id from showtime
 
-          var cinemaid_index =  -1//cinemas_and_showtimes.indexOf(cinemaid) // index of cinema_id if present in cinemas_and_showtimes
+          var cinemaid_index =  -1 // -1 (default) === cinemaid id not found in cinemas_and_showtimes
 
-          for(j = 0; j < cinemas_and_showtimes.length; j++){
-
+          for(j = 0; j < cinemas_and_showtimes.length; j++){ 
             if(cinemas_and_showtimes[j][0] === cinemaid){
               cinemaid_index = j
               break
@@ -303,60 +271,51 @@ express()
           if(cinemaid_index === -1){ // if cinema_id not present
             
             cinemas_and_showtimes.push([cinemaid, [showtimes[i]]]) // if it does not exist in cinemas_and_showtimes,
-                                                                 // push a new array with [cinemaid, showtime]
+                                                                   // push a new array with [cinemaid, showtime]
           }
-          else{
+          else{ // if cinema_id was found
 
             cinemas_and_showtimes[cinemaid_index][1].push(showtimes[i]) // if it does exist, push to the index
                                                                         // with cinema_id as its first value
           }
 
-        } // end of creating showtimes array by cinema_id
+        } // end of creating cinemas_and_showtimes array
 
-        // console.log(JSON.stringify(cinemas_and_showtimes))
-
-        //ultimately want to be able to display the cinema name + showtimes
-
-        var cinema_names_showtime_details = []
+        var cinema_names_showtime_details = [] // Creating ANOTHER array that will contain cinema info as well
+                                               // for the facebook card buttons. This will also get the raw
+                                               // movie times from the showtimes objects.
 
         for(k = 0; k < cinemas_and_showtimes.length; k++){
           try{
             var cid = cinemas_and_showtimes[k][0]
-            // console.log(cid)
-            // console.log(util.inspect(cinemas_list.cinemas[cid], false, null))
-            // Object.prototype.toString.call(cinemas_list.cinemas[cid])
-            // console.log(cinemas_list.cinemas[cid].keys)
             
             var ctel = cinemas_list.cinemas[cid].telephone
             var cweb = cinemas_list.cinemas[cid].website
             var cadd = cinemas_list.cinemas[cid].location.address.display_text
             var cname = cinemas_list.cinemas[cid].name
+
             var start_times = []
 
-            for(l = 1; l < cinemas_and_showtimes[k][1].length; l++){
-              start_times.push(cinemas_and_showtimes[k][1][l].start_at)
+            for(l = 1; l < cinemas_and_showtimes[k][1].length; l++){    // Getting all time strings from each
+              start_times.push(cinemas_and_showtimes[k][1][l].start_at) // showtimes object.
             }
-            //cinemas_and_showtimes[k][1].start_at
 
             cinema_names_showtime_details.push(
-              [cname, start_times, [cname,ctel,cweb,cadd]]
-            )
-          }
+              [cname, start_times, [cname,ctel,cweb,cadd]] // This will be the format of the array holding all
+            )                                              // information needed to make a nice looking facebook
+          }                                                // card.
           catch(error){
             continue
           }
         }
 
-        //console.log(cinema_names_showtime_details)
         var week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 
         var response_messages = []
 
 
-        for(m = 0; m < cinema_names_showtime_details.length; m++){ //[cname, start_times, [cname,ctel,cweb,cadd]]
-
-          var page_days_times = [] // time arrays for custom page at /showtimes endpoint
-
+        for(m = 0; m < cinema_names_showtime_details.length; m++){ // Start of loop chain to convert cinema_names_showtime_details
+                                                                   // array into objects to be sent back to Dialogflow
           var raw_showtimes = cinema_names_showtime_details[m][1]
 
           var times = []
@@ -365,21 +324,7 @@ express()
           for(n = 0; n < raw_showtimes.length; n++){
             //2018-08-04T19:10:00-07:00  <----  [:10] = 2018-08-04
 
-            // var times = []
-            // var days = []
-
             var datestring = raw_showtimes[n].substring(0,10)
-
-            // console.log(Object.prototype.toString.call(days))
-
-            // console.log(days)
-            // console.log("end")
-
-            //var holymolytest = days.indexOf('hey')
-
-            // console.log("days index: " + holymolytest)//datestring))//////////////////////////////////////////////////////////////////////////////////
-            // console.log("days: " + days)
-            // console.log("date substring: " + datestring)
 
             var days_index = -1
             for(z = 0; z < days.length; z++){
@@ -395,7 +340,6 @@ express()
             if(days_index === -1){
 
               days.push(datestring)
-              //console.log(raw_showtimes[n].substring(0,10))
 
               var time = new Date(raw_showtimes[n])
               var time_day = week[time.getDay()] + " " + (time.getMonth()+1) + "/" + time.getDate()
@@ -424,10 +368,6 @@ express()
               times[days_index].push(time_hourmin)
 
             }
-
-            //page_days_times = page_days_times.concat(times)
-            //console.log(page_days_times)
-            //console.log(times)
 
           }
 
@@ -473,28 +413,20 @@ express()
                               "title":"Showtimes"
                             }
                           ]// end buttons
-                        }//,
-                        // {
-                        //   "title" : "testing",
-                        //   "subtitle" : "testing123456testing123456testing123456testing123456testing123456testing123456testing123456testing123456"
-                        // }
+                        }                        
                       ]//end elements
                     }
                   }
                 }
                 //end fb payload
               }
-            }//,
-              // {
-              //   "type": 0,
-              //   "platform": "facebook",
-              //   "speech": cinema_names_showtime_details[m][1]
-              // }
+            }
           ]//end array
 
           response_messages = response_messages.concat(cinema_messages)
 
-        }
+        } // End of loop chain to convert cinema_names_showtime_details into custom payload
+          // objects for dialogflow.
 
         response_messages = response_messages.concat([{
             "platform": "facebook",
@@ -506,12 +438,6 @@ express()
             "type": 2
         }])
 
-        //console.log(date_times_url_queries)
-
-        //there's gonna be quite a few messages being sent here
-
-        //console.log(response_messages[0])
-        console.log('almost there')
         res.send({
           "speech": "Movie times",
           "messages" : response_messages
@@ -706,7 +632,11 @@ express()
       })
     }
   })
-//////////////////////////////// dynamic schedule html
+
+//////////////////////////////// Dynamic schedule html response to get requests at the /showtimes endpoint.
+//////////////////////////////// This is displayed when the user asks for tickets, and clicks on 'showtimes'
+//////////////////////////////// quick reply. The quick reply sends a super long url with some data to be
+//////////////////////////////// parsed by the code below.
 
 .get("/showtimes", (req, res) => {
 
@@ -749,5 +679,4 @@ express()
 
 })
 
-////////////////////////////////
-  .listen(PORT, () => console.log(util.format('Listening on PORT %s', String(PORT))))
+.listen(PORT, () => console.log(util.format('Listening on PORT %s', String(PORT))))
